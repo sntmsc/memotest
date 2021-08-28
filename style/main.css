@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+
+body{
+    pointer-events: none;
+    background-color: darkslategray;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#popup-section{
+    display: flex;
+    
+    opacity: 1;
+    transition: all 1s;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    pointer-events: auto;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+#popup-container{
+    position: relative;
+    background: darkslategray;
+    width: 19em;
+    max-width: 100%;
+    height: 29em;
+    border-radius: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-container h1{ 
+    display: flex;
+    justify-content: center; 
+    margin:0 auto;
+}
+
+.boton{
+    background-color: #21333a;
+    border: .5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color:white;
+    font-size: 1em;
+    align-items: center;
+    text-align: center;
+    font-family: 'Inknut Antiqua', serif;
+}
+
+#titulo{
+    font-family: 'Cinzel', serif;
+    margin-top: 1em;
+    margin-bottom: .5em;
+}
+#timer__section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5em;
+}
+#viewer__container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 7px black;
+    width: 20em;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+#timer__container{
+    display:flex;
+}
+.timer__span{
+    font-size: 3em;
+    font-family: 'Hepta Slab', serif;
+    text-shadow: 1px 1px rgb(96, 124, 124);
+    opacity: 1;
+    visibility: visible;
+}
+.win__span{
+    font-size: 2em;
+    font-family: 'Hepta Slab', serif;
+    font-weight: 900;
+    text-shadow: 1px 1px rgb(96, 124, 124);
+    opacity: 0;
+    visibility: hidden;
+}
+#container__reset{
+    display: flex;
+    justify-content: center;
+}
+
+#container__nivel{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    align-items: center;
+}
+.eleccion__nivel{
+    margin: 1em 0;
+}
+#texto__niveles{
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 1em;
+    margin-bottom: 2em;
+    margin: 1em 0;
+}
+.texto__nivel{
+    font-family: 'Cinzel', serif;
+  font-size: 1em;
+}
+
+#nivel-dificil{
+    display: none;
+    pointer-events: none;
+}
+#nivel-dificil__label{
+    pointer-events: none;
+}
+#nivel-dificil__mobile{
+    margin: 1em 0;
+    display: block;
+    font-style: oblique;
+}
+
+#memotest{
+    display: flex;
+    justify-content: center;
+    position: relative; 
+    bottom:3em;
+}
+#contenedor__tablero{
+    background-image: url("fondoMemotest.jpg");
+    background-position-x: right;
+    background-position-y: 70%;
+    display: inline-flex;
+    align-items: center;
+    position: relative; 
+}
+
+.columna-memotest{
+    margin: 0;
+}
+.columna-memotest__invisible{
+    display: none;
+}
+.contenedor__carta-boton{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.carta-boton{
+    width: 5em;
+    height: 5em; 
+    background-color:rgb(37, 44, 54); 
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.carta-boton__invisible{
+    display: none; 
+}
+
+.btn-content{
+   position: absolute;
+   font-family: 'Josefin Slab', serif;
+   font-size: 4.5em;
+   color:#3b6452;
+   -webkit-text-stroke: 1px black;
+   text-shadow: 2px 2px black;
+   text-align: center; 
+   align-items: center;
+   display: none; 
+   margin-top: .1em;
+   
+}
+
+.btn__mostrar{
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+
+@media only screen and (min-width : 600px) and (min-height: 780px) { /* Desktop */ 
+    #popup-container{
+        width: 35em;
+        height: 55em;
+    }
+    #popup-container h1{ 
+        font-size: 2.7em;
+    }
+    #texto__niveles{
+        font-size: 1.7em; 
+    }
+    .texto__nivel{
+      font-size: 1.5em;
+    }
+    #nivel-dificil{
+        display: block;
+        pointer-events: visible;
+    }
+    #nivel-dificil__label{
+        pointer-events: visible;
+    }
+    #nivel-dificil__mobile{
+        display: none;
+    }
+    .boton{
+        font-size: 1.5em;
+    }
+    #timer__container{
+        width: 25em;
+    }
+    .timer__span{
+        font-size: 5em;
+    }
+    .win__span{
+        font-size: 2.5em;
+    }
+    #memotest{
+        margin-top: 8em;
+        bottom: 5em;
+    }
+    .carta-boton{
+        height: 8em;
+        width: 8em;
+        border-radius: 5%;
+    }
+    .btn-content{
+        font-size: 7em;
+    }
+}
+
+@media only screen and (min-width : 600px) and (max-height : 780px){ /* Netbook */
+
+    #nivel-dificil{
+        display: block;
+        pointer-events: visible;
+    }
+    #nivel-dificil__label{
+        pointer-events: visible;
+    }
+    #nivel-dificil__mobile{
+        display: none;
+    }
+    #memotest{
+        bottom: 3em;
+    }
+    .carta-boton{
+        height: 5.5em;
+        width: 5.5em;
+        border-radius: 5%;
+    }
+    .btn-content{
+        font-size: 4.5em;
+    }
+}

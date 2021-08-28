@@ -1,0 +1,280 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head>
+    <link rel="stylesheet" href="style/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Memotest</title>
+</head>
+<body>
+
+<section id="popup-section">
+    <div id="popup-container">
+        <h1 id="titulo">Memotest numérico</h1>
+        <div id="container__nivel">
+            <span id="texto__niveles">Elija el nivel de dificultad:</span>
+            <label class="texto__nivel" for="nivel-facil">Fácil</label>
+            <input type="radio" class="eleccion__nivel" id="nivel-facil" name="nivel" value="facil" checked>
+            <label class="texto__nivel" for="nivel-intermedio">Intermedio</label>
+            <input type="radio" class="eleccion__nivel" id="nivel-intermedio" name="nivel" value="intermedio">
+            <label class="texto__nivel" id="nivel-dificil__label" for="nivel-dificil">Difícil</label>
+            <span id="nivel-dificil__mobile">(Disponible para tablet o pc)</span>
+            <input type="radio" class="eleccion__nivel" id="nivel-dificil" name="nivel" value="dificil">
+        </div>
+    <button class="boton" id="jugar">jugar</button>
+    </div>
+</section>
+<section id="timer__section">
+    <div id="viewer__container">
+        <div id="timer__container">
+            <div class="timer__span" id="timer__h">00:</div>
+            <div class="timer__span" id="timer__m">00:</div>
+            <div class="timer__span" id="timer__s">00</div>
+        </div>
+            <span class="win__span" id="final__aviso"></span>
+            <span class="win__span" id="final__tiempo"></span>
+            <span class="win__span" id="final__intentos"></span>
+    </div>
+    <div id="container__reset">
+        <button class="boton" id="reset" type="button">
+            Reiniciar
+          </button>
+    </div>
+</section> 
+
+<main id=memotest style="display:flex;">
+    <div id=contenedor__tablero>
+        <div class="columna-memotest columna-memotest__invisible"> 
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-1" class="carta-boton">
+                    <span id="carta-1__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-2" class="carta-boton">
+                    <span id="carta-2__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-3" class="carta-boton">
+                    <span id="carta-3__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-4" class="carta-boton">
+                    <span id="carta-4__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-5" class="carta-boton">
+                    <span id="carta-5__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-6" class="carta-boton">
+                    <span id="carta-6__numero" class="btn-content"></span>
+                </button>
+            </ul>    
+           
+          </div>
+        <div class="columna-memotest">
+                 <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-7" class="carta-boton carta-boton__invisible">
+                    <span id="carta-7__numero" class="btn-content"></span>
+                </button>
+                </ul>
+                <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-8"class="carta-boton">
+                    <span id="carta-8__numero" class="btn-content"></span>
+                </button>
+                 </ul>
+               <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-9" class="carta-boton">
+                    <span id="carta-9__numero" class="btn-content"></span>
+                </button>
+               </ul>
+               <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-10" class="carta-boton">
+                    <span id="carta-10__numero" class="btn-content"></span>
+                </button>
+                </ul>
+                <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-11" class="carta-boton">
+                    <span id="carta-11__numero" class="btn-content"></span>
+                </button>
+               </ul>
+               <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-12" class="carta-boton carta-boton__invisible">
+                    <span id="carta-12__numero" class="btn-content"></span>
+                </button>
+               </ul>    
+              
+               </div>
+        <div class="columna-memotest">
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-13" class="carta-boton carta-boton__invisible">
+                    <span id="carta-13__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-14" class="carta-boton">
+                    <span id="carta-14__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-15" class="carta-boton">
+                    <span id="carta-15__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-16" class="carta-boton">
+                    <span id="carta-16__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-17" class="carta-boton">
+                    <span id="carta-17__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-18" class="carta-boton carta-boton__invisible">
+                    <span id="carta-18__numero" class="btn-content"></span>
+                </button>
+            </ul>    
+          
+        </div>
+
+        <div class="columna-memotest">
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-19" class="carta-boton carta-boton__invisible">
+                    <span id="carta-19__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-20" class="carta-boton">
+                    <span id="carta-20__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-21" class="carta-boton">
+                    <span id="carta-21__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-22" class="carta-boton">
+                    <span id="carta-22__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-23" class="carta-boton">
+                    <span id="carta-23__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-24" class="carta-boton carta-boton__invisible">
+                    <span id="carta-24__numero" class="btn-content"></span>
+                </button>
+            </ul>    
+          
+        </div>
+
+        <div class="columna-memotest">
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-25" class="carta-boton carta-boton__invisible">
+                    <span id="carta-25__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-26" class="carta-boton">
+                    <span id="carta-26__numero" class="btn-content"></span>
+                </button>
+            </ul >
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-27" class="carta-boton">
+                    <span id="carta-27__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-28" class="carta-boton">
+                    <span id="carta-28__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-29" class="carta-boton">
+                    <span id="carta-29__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-30" class="carta-boton  carta-boton__invisible">
+                    <span id="carta-30__numero" class="btn-content"></span>
+                </button>
+            </ul>    
+          
+        </div>
+
+        <div class="columna-memotest columna-memotest__invisible">
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-31" class="carta-boton">
+                    <span id="carta-31__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-32" class="carta-boton">
+                    <span id="carta-32__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-33" class="carta-boton">
+                    <span id="carta-33__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-34" class="carta-boton">
+                    <span id="carta-34__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-35" class="carta-boton">
+                    <span id="carta-35__numero" class="btn-content"></span>
+                </button>
+            </ul>
+            <ul class="contenedor__carta-boton">
+                <button type="button" id="carta-36" class="carta-boton">
+                    <span id="carta-36__numero" class="btn-content"></span>
+                </button>
+            </ul>    
+          
+        </div>
+    </div>  
+</main>  
+    
+    
+<script src="main.js"></script>
+ <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
